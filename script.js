@@ -595,12 +595,13 @@ if (precipitationCard) {
     }
     
     // Function to update Terraink map
+    const MAP_URL = 'https://vividly-living-celibacy.ngrok-free.dev';
     function updateMap(city) {
     const mapFrame = document.getElementById('weatherMap');
     if (mapFrame) {
         // Get current src
         const currentSrc = mapFrame.src;
-        const newSrc = `http://localhost:5173/?city=${encodeURIComponent(city)}&t=${Date.now()}`;
+        const newSrc = `${MAP_URL}/?city=${encodeURIComponent(city)}&t=${Date.now()}`;
         
         // Force complete reload
         mapFrame.src = newSrc;
